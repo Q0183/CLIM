@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+  <head>
+    <title>TEST DDNS Webapp</title>
+  </head>
+  <body>
+    <h1>Testpagina voor DDNS Webapp</h1>
+    {% if not google.authorized %}
+      <a href="{{ url_for('google.login') }}">Inloggen met Google</a>
+    {% else %}
+      <p>Je bent succesvol ingelogd met Google!</p>
+    {% endif %}
+  </body>
+</html>
