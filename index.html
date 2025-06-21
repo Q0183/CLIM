@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DDNS Manager</title>
+</head>
+<body>
+    <h2>Welkom, {{ email }}</h2>
+    <p>Jouw token voor API-gebruik: <code>{{ token }}</code></p>
+
+    <h3>Voeg een DNS record toe</h3>
+    <form method="POST" action="/add">
+        FQDN: <input type="text" name="fqdn" required><br>
+        IP: <input type="text" name="ip" required><br>
+        <button type="submit">Toevoegen</button>
+    </form>
+
+    <h3>Huidige records</h3>
+    <ul>
+        {% for record in records %}
+        <li>{{ record.fqdn }} → {{ record.ip }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
