@@ -1,4 +1,4 @@
-mport os
+import os
 from flask import Flask, redirect, url_for, session, request, render_template, jsonify
 from flask_dance.contrib.google import make_google_blueprint, google
 from flask_pymongo import PyMongo
